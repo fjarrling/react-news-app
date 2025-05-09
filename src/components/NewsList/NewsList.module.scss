@@ -1,0 +1,7 @@
+@use '@/styles/helpers' as *;
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr));
+  gap: rem(16);
+}

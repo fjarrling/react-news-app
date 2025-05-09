@@ -1,0 +1,36 @@
+@use '/src/styles/helpers' as *;
+
+.skeletonList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: rem(16)
+}
+
+.skeletonItem {
+  background: linear-gradient(
+                  90deg,
+                  #f0f0f0 25%,
+                  #e0e0e0 37%,
+                  #f0f0f0 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  min-height: rem(500);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

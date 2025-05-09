@@ -1,0 +1,128 @@
+@use '../helpers' as *;
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+body {
+  padding-top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: rem(14);
+  color: var(--color-black);
+  font-weight: 400;
+}
+
+main {
+  flex-grow: 1;
+}
+
+button {
+  font-family: var(--font-family-base);
+  font-size: rem(14);
+  color: var(--color-black);
+  font-weight: 400;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+}
+
+h1 {
+}
+
+h1,
+.h1 {
+}
+
+h2,
+.h2 {
+}
+
+h3,
+.h3 {
+}
+
+h4,
+.h4 {
+}
+
+h5,
+.h5 {
+}
+
+h6,
+.h6 {
+}
+
+p {
+  --paragraphMarginBottom: #{rem(24)};
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed var(--color-White);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+
+      content: '';
+    }
+  }
+}
