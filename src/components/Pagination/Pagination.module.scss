@@ -1,0 +1,31 @@
+@use '@/styles/helpers' as *;
+
+.pagination {
+  margin-block: rem(20);
+
+  &List {
+    @include flex-center();
+  }
+
+  &Item {
+    @include flex-center();
+  }
+
+  &Button {
+    @include reset-button;
+    @include square(rem(42));
+    padding: rem(8);
+    font-size: rem(16);
+    border-radius: rem(4);
+    border: rem(1) solid darkslategray;
+
+    &Active {
+      background-color: teal;
+      color: white;
+    }
+
+    @include hover {
+      background-color: lightgrey;
+    }
+  }
+}
