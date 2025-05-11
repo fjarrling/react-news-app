@@ -9,14 +9,14 @@ type PaginationProps = {
 
 const Pagination = ({totalPages, changePage, currentPage}: PaginationProps) => {
   const pagesArray = getPagesArray(totalPages)
-  console.log(pagesArray)
+
   return (
     <div className={styles.pagination}>
       <ul className={styles.paginationList}>
         {
           pagesArray.map((page, index) => {
             return (
-              <li className={styles.paginationItem}>
+              <li key={index} className={styles.paginationItem}>
                 <button
                   className={`${styles.paginationButton} ${currentPage === page ? styles.paginationButtonActive : ''}`}
                   key={index}
