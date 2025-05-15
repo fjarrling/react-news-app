@@ -6,19 +6,16 @@ import NewsList from '@/components/NewsList/NewsList';
 import Skeleton from '@/components/Skeleton/Skeleton';
 import type {NewsItem} from '@/types/types.ts';
 import Pagination from '@/components/Pagination/Pagination.tsx';
-import {getTotalPagesCount} from '@/utils/utils.ts';
 import {useFetching} from '@/hooks/useFetching.ts';
-import {PAGE_SIZE, TOTAL_RESULTS} from '@/consts/consts.ts';
+import {PAGE_SIZE, TOTAL_PAGES} from '@/consts/consts.ts';
 
 const Home = () => {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalPages, setTotalPages] = useState<number>(0);
 
   const fetchNewsCallback = useCallback(async (pageSize: number, currentPage: number) => {
     const response = await getNews(pageSize, currentPage);
     setNews(response.articles);
-    setTotalPages(getTotalPagesCount(pageSize, TOTAL_RESULTS));
   }, []);
 
   const [fetchNews, isNewsLoading, newsError] = useFetching(fetchNewsCallback);
@@ -26,7 +23,6 @@ const Home = () => {
   useEffect(() => {
     fetchNews(PAGE_SIZE, currentPage);
   }, [fetchNews, currentPage]);
-
 
   return (
     <>
@@ -38,7 +34,7 @@ const Home = () => {
         {newsError && <p>Произошла ошибка: {newsError.message}</p>}
         <Pagination
           currentPage={currentPage}
-          totalPages={totalPages}
+          totalPages={TOTAL_PAGES}
           changePage={setCurrentPage}
         />
       </div>

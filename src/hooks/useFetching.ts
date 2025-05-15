@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState, useCallback } from 'react';
 
 export const useFetching = <Args extends unknown[]>(
   callback: (...args: Args) => Promise<void>
@@ -10,7 +10,7 @@ export const useFetching = <Args extends unknown[]>(
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
 
-  const fetchData = async (...args: Args): Promise<void> => {
+  const fetchData = useCallback(async (...args: Args): Promise<void> => {
     try {
       setIsLoading(true);
       await callback(...args);
@@ -19,7 +19,7 @@ export const useFetching = <Args extends unknown[]>(
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [callback]);
 
   return [fetchData, isLoading, error];
 };
