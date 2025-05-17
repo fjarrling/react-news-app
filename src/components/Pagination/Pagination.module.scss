@@ -5,6 +5,8 @@
 
   &List {
     @include flex-center();
+    gap: rem(4);
+    flex-wrap: wrap;
   }
 
   &Item {
