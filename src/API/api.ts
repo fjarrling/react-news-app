@@ -3,13 +3,13 @@ import axios from 'axios'
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const API_URL = import.meta.env.VITE_NEWS_API_URL;
 
-export const getNews = async (pageSize = 9, page = 1) => {
+export const getNews = async (pageSize = 9, page = 1, searchQuery = '') => {
   try {
     const response = await axios.get(`${API_URL}everything`, {
       params: {
         apiKey: API_KEY,
-        language: 'ru',
-        q: 'JavaScript',
+        domains: 'habr.com',
+        q: searchQuery,
         pageSize: pageSize,
         page: page,
       }
