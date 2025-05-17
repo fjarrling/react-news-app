@@ -25,8 +25,8 @@ const NewsItem = ({item}: NewsItemProps) => {
           Читать полностью
         </a>
         <div className={styles.itemFooter}>
-          <p>{new Date(item.publishedAt).toLocaleDateString()}</p>
-          <p>{item.author}</p>
+          <p className={styles.itemDate}>{new Date(item.publishedAt).toLocaleDateString()}</p>
+          <p className={styles.itemAutor}>{item.author}</p>
         </div>
       </div>
     </li>
