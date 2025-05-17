@@ -1,12 +1,8 @@
-import { useState, useCallback } from 'react';
+import {useState, useCallback} from 'react';
 
-export const useFetching = <Args extends unknown[]>(
-  callback: (...args: Args) => Promise<void>
-): [
-  (...args: Args) => Promise<void>,
-  boolean,
-    Error | null
-] => {
+export const useFetching = <Args extends unknown[]>
+  (callback: (...args: Args) => Promise<void>)
+  : [(...args: Args) => Promise<void>, boolean, Error | null] => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
 
