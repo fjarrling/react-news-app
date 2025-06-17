@@ -2,8 +2,19 @@
 
 .title {
   color: var(--color-black);
-  text-align: center;
-  margin-bottom: rem(32);
-  font-size: rem(32);
+  text-align: start;
+  margin-bottom: rem(16);
+  font-size: rem(24);
   font-weight: 600;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(32);
+  padding-block: rem(32);
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
 }

@@ -4,15 +4,18 @@ import type {NewsItem as TNewsItem} from "@/types/types.ts";
 
 
 type NewsListProps = {
-  news: TNewsItem[]
+  news: TNewsItem[],
+  variant: "default" | "hot";
 }
 
-const NewsList = ({news}: NewsListProps) => {
+const NewsList = ({news, variant}: NewsListProps) => {
 
   return (
-    <ul className={styles.list}>
+    <ul
+      className={variant === "default" ? styles.list : styles.listHot}
+    >
       {news.map((item, index) => {
-        return <NewsItem key={index} item={item}/>
+        return <NewsItem key={index} item={item} variant={variant} />
       })}
     </ul>
   )

@@ -1,6 +1,6 @@
 import {getPagesArray} from "@/utils/utils.ts";
 import styles from './Pagination.module.scss'
-
+import React from 'react'
 type PaginationProps = {
   totalPages: number,
   currentPage: number,
@@ -33,4 +33,4 @@ const Pagination = ({totalPages, changePage, currentPage}: PaginationProps) => {
   );
 };
 
-export default Pagination;
+export default React.memo(Pagination);

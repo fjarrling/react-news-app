@@ -2,6 +2,22 @@
 
 .list {
   display: grid;
+  //grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr));
+  gap: rem(16);
+}
+
+.listHot {
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr));
   gap: rem(16);
+  max-height: rem(1157);
+  overflow: auto;
+
+  @include tablet {
+    max-height: none;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
