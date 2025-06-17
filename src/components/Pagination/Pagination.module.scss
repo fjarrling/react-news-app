@@ -1,10 +1,11 @@
 @use '@/styles/helpers' as *;
 
 .pagination {
-  margin-block: rem(20);
+  margin-block: rem(16);
 
   &List {
     @include flex-center();
+    justify-content: start;
     gap: rem(4);
     flex-wrap: wrap;
   }
@@ -15,10 +16,9 @@
 
   &Button {
     @include reset-button;
-    @include square(rem(42));
-    padding: rem(8);
-    font-size: rem(16);
-    border-radius: rem(4);
+    @include square(rem(36));
+    font-size: rem(14);
+    //border-radius: rem(3);
     border: rem(1) solid darkslategray;
 
     &Active {

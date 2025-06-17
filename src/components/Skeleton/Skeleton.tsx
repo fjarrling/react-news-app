@@ -1,12 +1,17 @@
 import styles from './Skeleton.module.scss'
 
-const Skeleton = ({count}) => {
+interface SkeletonProps {
+  count: number,
+  variant: 'default' | 'hot'
+}
+
+const Skeleton = ({count, variant}: SkeletonProps) => {
   return (
-    <ul className={styles.skeletonList}>
+    <ul className={variant === "default" ? styles.skeletonList : styles.skeletonListHot}>
       {Array(count)
         .fill(null)
         .map((_, index) => (
-          <li key={index} className={styles.skeletonItem}></li>
+          <li key={index} className={variant === "default" ? styles.skeletonItem : styles.skeletonItemHot}></li>
         ))}
     </ul>
   )

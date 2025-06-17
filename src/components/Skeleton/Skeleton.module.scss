@@ -2,7 +2,6 @@
 
 .skeletonList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: rem(16)
 }
 
@@ -15,16 +14,49 @@
   );
   background-size: 400% 100%;
   animation: skeleton-loading 1.4s ease infinite;
-  border-radius: rem(20);
+  //border-radius: rem(20);
   box-shadow: 0 rem(4) rem(8) 0 rgba(0, 0, 0, 0.2), 0 rem(6) rem(20) 0 rgba(0, 0, 0, 0.19);
   overflow: hidden;
   transition: transform 0.3s ease;
-  min-height: rem(500);
+  min-height: rem(96);
 
   &:hover {
     transform: translateY(-5px);
   }
 }
+
+.skeletonListHot {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr));
+  gap: rem(16);
+  max-height: rem(1157);
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.skeletonItemHot {
+  background: linear-gradient(
+                  90deg,
+                  #f0f0f0 25%,
+                  #e0e0e0 37%,
+                  #f0f0f0 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  //border-radius: rem(20);
+  box-shadow: 0 rem(4) rem(8) 0 rgba(0, 0, 0, 0.2), 0 rem(6) rem(20) 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  min-height: rem(356);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
 
 @keyframes skeleton-loading {
   0% {
