@@ -51,9 +51,10 @@ const Home = () => {
         <div className={styles.body}>
           <div>
             <h2 className={styles.title}>Hot News</h2>
-            {isHotNewsLoading ? <Skeleton variant="hot" count={PAGE_SIZE}/> :
-              <NewsList variant="hot" news={hotNews.articles}/>}
-            {isHotNewsError && <p>Произошла ошибка: {hotNewsError.message}</p>}
+            {isHotNewsLoading ?
+              <Skeleton variant="hot" count={PAGE_SIZE}/>
+              : (hotNews?.articles && <NewsList variant="hot" news={hotNews.articles}/>)}
+            {isHotNewsError && hotNewsError && <p>Произошла ошибка: {hotNewsError.message}</p>}
           </div>
           <div>
             <Input type='text'
@@ -66,9 +67,10 @@ const Home = () => {
               totalPages={totalPages}
               changePage={setCurrentPage}
             />
-            {isNewsLoading ? <Skeleton variant="default" count={PAGE_SIZE}/> :
-              <NewsList variant="default" news={news.articles}/>}
-            {isNewsError && <p>Произошла ошибка: {newsError.message}</p>}
+            {isNewsLoading
+              ? <Skeleton variant="default" count={PAGE_SIZE}/>
+              : (news?.articles && <NewsList variant="default" news={news.articles}/>)}
+            {isNewsError && newsError && <p>Произошла ошибка: {newsError.message}</p>}
           </div>
         </div>
       </div>
