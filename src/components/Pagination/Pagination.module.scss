@@ -18,9 +18,8 @@
     @include reset-button;
     @include square(rem(36));
     font-size: rem(14);
-    //border-radius: rem(3);
     border: rem(1) solid darkslategray;
-
+    color: var(--text-color);
     &Active {
       background-color: teal;
       color: white;
