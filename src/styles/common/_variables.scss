@@ -2,46 +2,37 @@
 
 :root {
   --color-white: #ffffff;
-  --color-black: #000000;
+  --color-black: #1a1a1e;
 
-  --color-brown: #b38c66;
-  --color-brown-light: #edc59c;
+
+  --text-color: var(--color-black);
+  --bg-color: var(--color-white);
 
   --color-blue: #5db1c3;
   --color-red: #f62e2e;
   --color-green: #2eaa67;
 
-  --color-gray-light-super: #f9f9f9;
-  --color-gray-light: #f2f2f3;
   --color-gray: #dcdcdd;
-  --color-gray-dark: #9c9c9c;
-  --color-gray-dark-super: #424242;
-  --color-gray-logo: #7f858c;
 
   --font-family-base: 'Inter', sans-serif;
-  --font-family-alt: 'Playfair Display', sans-serif;
 
-  --container-width: #{rem(1824)};
+  --container-width: #{rem(1800)};
   --container-padding-x: #{rem(48)};
 
   --transition-duration: 0.4s;
 
   --100vw: calc(100vw - var(--scrollbar-width));
 
-  --header-height: #{rem(177)};
 
   @include laptop {
     --container-padding-x: #{rem(24)};
-    --header-height: #{rem(137)};
   }
 
   @include tablet {
     --container-padding-x: #{rem(20)};
-    --header-height: #{rem(78)};
   }
 
   @include mobile-s {
     --container-padding-x: #{rem(15)};
-    --header-height: #{rem(73)};
   }
 }
