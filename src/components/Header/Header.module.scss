@@ -5,6 +5,9 @@
   margin-bottom: rem(24);
 
   &Inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-block: rem(24);
   }
 
@@ -17,5 +20,10 @@
 
   &Date {
     font-size: rem(24);
+  }
+
+  &Left {
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -1,0 +1,6 @@
+@use '/src/styles/helpers' as *;
+
+.themeSwitcher {
+  @include reset-button;
+  color: var(--text-color);
+}
