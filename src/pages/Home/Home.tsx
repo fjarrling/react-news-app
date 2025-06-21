@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <>
       <Header/>
-      <div className="container">
+  <div className="container">
         <div className={styles.body}>
           <div>
             <h2 className={styles.title}>Hot News</h2>
