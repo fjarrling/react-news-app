@@ -1,6 +1,38 @@
 @use '/src/styles/helpers' as *;
 
 .themeSwitcher {
-  @include reset-button;
-  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  border-radius: rem(32);
+
+  background-color: #f5f5f5;
+  padding: rem(6) rem(8);
+
+  &Dark {
+    background-color: #2C2C2C;
+  }
+
+  &Button {
+    @include reset-button;
+    @include flex-center;
+    padding: rem(8);
+    background-color: transparent;
+    border-radius: 50%;
+    //color: var(--color-white);
+
+    &Sun {
+      color: var(--color-white);
+    }
+
+    &Active {
+      background-color: teal;
+      color: var(--color-white);
+    }
+
+    svg {
+      @include  square(rem(20));
+      fill: none;
+    }
+  }
 }
