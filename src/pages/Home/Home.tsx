@@ -43,11 +43,10 @@ const Home = () => {
     isError: isHotNewsError,
     error: hotNewsError
   } = useAsync<{ articles: NewsItem[] }>(fetchHotNews, [fetchHotNews]);
-
   return (
     <>
       <Header/>
-  <div className="container">
+      <div className="container">
         <div className={styles.body}>
           <div>
             <h2 className={styles.title}>Hot News</h2>

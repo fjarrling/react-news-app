@@ -1,0 +1,41 @@
+@use "@/styles/helpers" as *;
+
+.errorPage {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  &Inner {
+    @include flex-center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    padding: rem(20);
+  }
+
+  &Title {
+    font-size: rem(60);
+    margin-bottom: rem(20);
+  }
+
+  &Subtitle {
+    font-size: rem(20);
+    margin-bottom: rem(30);
+    line-height: 1.5;
+    max-width: rem(600);
+  }
+
+  &Button {
+    display: inline-block;
+    padding: rem(8) rem(20);
+    background-color: teal;
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: rem(8);
+    font-size: rem(16);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: teal;
+    }
+  }
+}
