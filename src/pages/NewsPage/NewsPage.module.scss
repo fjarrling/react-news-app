@@ -1,0 +1,48 @@
+@use "@/styles/helpers" as *;
+
+.newsPage {
+  color: var(--text-color);
+
+  &Container {
+    max-width: rem(1440);
+  }
+
+  &Inner {
+    padding-block: rem(40);
+  }
+
+  &Title {
+    font-size: rem(28);
+    margin-bottom: rem(16);
+  }
+
+  &Image {
+    max-height: rem(200);
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: rem(40);
+  }
+
+  &Text {
+    font-size: rem(20);
+    margin-bottom: rem(16);
+  }
+
+  &Footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &Link {
+    display: flex;
+    color: #6868ff;
+    margin-bottom: rem(16);
+  }
+
+  &BackButton {
+    @include flex-center;
+    padding: rem(8) rem(12);
+    background-color: teal;
+  }
+}
