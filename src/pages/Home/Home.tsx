@@ -43,6 +43,7 @@ const Home = () => {
     isError: isHotNewsError,
     error: hotNewsError
   } = useAsync<{ articles: NewsItem[] }>(fetchHotNews, [fetchHotNews]);
+
   return (
     <>
       <Header/>

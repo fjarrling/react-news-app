@@ -15,7 +15,7 @@ const NewsList = ({news, variant}: NewsListProps) => {
       className={variant === "default" ? styles.list : styles.listHot}
     >
       {news.map((item, index) => {
-        return <NewsItem key={index} item={item} variant={variant} />
+        return <NewsItem key={index} index={index} item={item} variant={variant} />
       })}
     </ul>
   )
